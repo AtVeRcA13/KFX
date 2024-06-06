@@ -32,8 +32,8 @@
                 <p class="products__name">{{ item.name }}</p>
                 <p class="products__price">{{ item.price }}</p>
                 <button class="pr-button products__button" data-type="Пшеница сорт: Амелия" data-price="150">Купить</button>
-                <a class="pr-button products__link" href="products_wheat-Amelia.html" data-type="Пшеница сорт: Амелия"
-                    data-price="150">Подробнее</a>
+                <NuxtLink :to="`/products/${item.product}`" class="pr-button products__link"
+                    data-type="Пшеница сорт: Амелия" data-price="150">Подробнее</NuxtLink>
 
             </swiper-slide>
 
@@ -60,42 +60,50 @@ const sdlisList = [
     {
         img: img1,
         name: "Пшеница cорт: Амелия",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img2,
         name: "Кукуруза cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img3,
         name: "Ячмень cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img4,
         name: "Гречиха cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img5,
         name: "Овес cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img6,
         name: "Горох cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img7,
         name: "Просо cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
     {
         img: img8,
         name: "Рожь cорт:",
-        price: "Цена: 150 р"
+        price: "Цена: 150 р",
+        product: "amelia"
     },
 
 ]

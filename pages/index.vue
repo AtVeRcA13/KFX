@@ -5,6 +5,7 @@
   <advantages-section />
   <product-section />
   <direction-section />
+  <contsctsSection />
 </template>
 
 <script setup>
@@ -14,6 +15,7 @@ import companySection from "sections/section-company/index.vue"
 import advantagesSection from "sections/section-advantages/index.vue"
 import productSection from "sections/section-product/index.vue"
 import directionSection from "sections/section-direction/index.vue"
+import contsctsSection from "sections/section-contacts/index.vue"
 </script>
 
 <style lang="scss" scoped></style>

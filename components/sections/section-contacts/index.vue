@@ -21,12 +21,13 @@
                         <p class="contacts__text">Ежедневно с 8:00 до 20:00</p>
                     </div>
                 </div>
-                <div class="map" id="map"></div>
+                <contact-map />
             </div>
         </div>
     </div>
 </template>
 <script setup>
+import contactMap from "./contact-map/index.vue"
 </script>
 
 <style lang="scss" scoped></style>
