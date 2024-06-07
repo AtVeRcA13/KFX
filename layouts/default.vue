@@ -13,4 +13,8 @@ import sectionHeader from "sections/section-header/index.vue"
 import sectionFooter from "sections/section-footer/index.vue"
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.main {
+    padding-top: 126px;
+}
+</style>

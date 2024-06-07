@@ -19,7 +19,7 @@
             slidesPerView: 2,
         },
         1300: {
-            slidesPerView: 2,
+            slidesPerView: 3,
         },
         1800: {
             slidesPerView: 4,
@@ -27,11 +27,12 @@
     }
         " class="products-slider">
 
-            <swiper-slide class="products__plants" v-for="item in sdlisList">
+            <swiper-slide class="products__plants" v-for="item in slideList">
                 <img :src="item.img" alt="" class="products__img">
                 <p class="products__name">{{ item.name }}</p>
                 <p class="products__price">{{ item.price }}</p>
-                <button class="pr-button products__button" data-type="Пшеница сорт: Амелия" data-price="150">Купить</button>
+                <button @click="store.togglePopup" class="pr-button products__button" data-type="Пшеница сорт: Амелия"
+                    data-price="150">Купить</button>
                 <NuxtLink :to="`/products/${item.product}`" class="pr-button products__link"
                     data-type="Пшеница сорт: Амелия" data-price="150">Подробнее</NuxtLink>
 
@@ -45,6 +46,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { Pagination, Navigation } from 'swiper/modules'
 import img1 from "images/wheat.png"
 import img2 from "images/Corn.png"
@@ -54,9 +56,10 @@ import img5 from "images/oats.png"
 import img6 from "images/peas.png"
 import img7 from "images/switchgrass.png"
 import img8 from "images/Rye.png"
+import { useAppStore } from 'store/appStore'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 const modules = [Pagination, Navigation]
-const sdlisList = [
+const slideList = ref([
     {
         img: img1,
         name: "Пшеница cорт: Амелия",
@@ -106,8 +109,11 @@ const sdlisList = [
         product: "amelia"
     },
 
-]
+])
+
+const store = useAppStore()
 </script>
+
 
 <style lang="scss" scoped>
 .products__link {

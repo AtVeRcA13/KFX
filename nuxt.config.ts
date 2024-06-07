@@ -21,4 +21,8 @@ export default defineNuxtConfig({
     assets: fileURLToPath(new URL('./assets/', import.meta.url)),
     images: fileURLToPath(new URL('./assets/images/', import.meta.url))
   },
+  modules: [
+    // ...
+    '@pinia/nuxt',
+  ],
 })

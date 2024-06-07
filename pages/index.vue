@@ -6,9 +6,11 @@
   <product-section />
   <direction-section />
   <contsctsSection />
+  <popup-product />
 </template>
 
 <script setup>
+import popupProduct from "popups/popup-product/index.vue"
 import firstSection from "sections/section-first-section/index.vue"
 import aboutSection from "sections/section-about/index.vue"
 import companySection from "sections/section-company/index.vue"
