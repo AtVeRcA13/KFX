@@ -144,6 +144,7 @@
     .first__section_title {
         font-size: 60px;
         max-width: 800px;
+        text-align: center;
     }
 
     .section--title {
@@ -214,6 +215,18 @@
 
     .section--title {
         font-size: 42px;
+    }
+
+    .products__name {
+        font-size: 24px;
+    }
+
+    .products__price {
+        font-size: 24px;
+    }
+
+    .pr-button {
+        font-size: 24px;
     }
 
     .horse-breeding__text {
@@ -385,7 +398,7 @@
     }
 
     .first__section_title {
-        font-size: 30px;
+        font-size: 45px;
     }
 
     .first__section {
@@ -397,8 +410,12 @@
 
     }
 
+    .company__title {
+        font-size: 16px;
+    }
+
     .company__text {
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .products__img {
@@ -416,6 +433,7 @@
 
     .footer__text {
         font-size: 16px;
+        margin-right: 10px;
     }
 
     .footer__img-vk {

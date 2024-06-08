@@ -3,25 +3,25 @@
         <nav class="burger-menu" v-if="store.burgerMenuOpened">
             <ul class="burger-menu__list">
                 <li class="burger-menu__list-item">
-                    <a href="#main" class="burger-menu__list-link">Главная</a>
+                    <nuxt-link href="#main" class="burger-menu__list-link">Главная</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#about" class="burger-menu__list-link">Глава КФХ</a>
+                    <nuxt-link href="#about" class="burger-menu__list-link">Глава КФХ</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#company" class="burger-menu__list-link">О компании</a>
+                    <nuxt-link href="#company" class="burger-menu__list-link">О компании</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#advantages" class="burger-menu__list-link">Преимущества</a>
+                    <nuxt-link href="#advantages" class="burger-menu__list-link">Преимущества</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#products" class="burger-menu__list-link">Продукция</a>
+                    <nuxt-link href="#products" class="burger-menu__list-link">Продукция</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#direction" class="burger-menu__list-link">Направление</a>
+                    <nuxt-link href="#direction" class="burger-menu__list-link">Направление</nuxt-link>
                 </li>
                 <li class="burger-menu__list-item">
-                    <a href="#contacts" class="burger-menu__list-link">Контакты</a>
+                    <nuxt-link href="#contacts" class="burger-menu__list-link">Контакты</nuxt-link>
                 </li>
             </ul>
         </nav>
@@ -30,8 +30,15 @@
 
 <script setup>
 import { useAppStore } from 'store/appStore'
+import { useRoute } from 'vue-router';
+import { watch } from "vue";
 
 const store = useAppStore()
+const route = useRoute()
+watch(() => route.fullPath, () => {
+    store.closeBurgerMenu();
+})
+
 </script>
 
 <style lang="scss" >

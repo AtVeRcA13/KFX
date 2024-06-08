@@ -28,7 +28,8 @@
         " class="products-slider">
 
             <swiper-slide class="products__plants" v-for="item in slideList">
-                <img :src="item.img" alt="" class="products__img">
+                <img :src="$config.public.API_BASE_URL + item.attributes.main_img.data.attributes.url" alt=""
+                    class="products__img">
                 <p class="products__name">{{ item.name }}</p>
                 <p class="products__price">{{ item.price }}</p>
                 <button @click="store.togglePopup" class="pr-button products__button" data-type="Пшеница сорт: Амелия"
@@ -58,13 +59,21 @@ import img7 from "images/switchgrass.png"
 import img8 from "images/Rye.png"
 import { useAppStore } from 'store/appStore'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
+const props = defineProps({
+    slideList: {
+        type: Array,
+        default: () => []
+    }
+})
+
 const modules = [Pagination, Navigation]
-const slideList = ref([
+/* const slideList = ref([
     {
-        img: img1,
-        name: "Пшеница cорт: Амелия",
-        price: "Цена: 150 р",
-        product: "amelia"
+        img: data.main_img,
+        name: data.name,
+        price: data.price,
+        product: data.sort
     },
     {
         img: img2,
@@ -109,7 +118,7 @@ const slideList = ref([
         product: "amelia"
     },
 
-])
+]) */
 
 const store = useAppStore()
 </script>

@@ -6,7 +6,7 @@
                 <h3 class="products--title">{{ props.description.title }}</h3>
             </div>
             <div class="products__inner">
-                <product-img :img="props.description.img" />
+                <products-slider :img="props.description.img" />
                 <div class="products__structure">
                     <h3 class="products__structure-title">Характеристика</h3>
                     <product-list />
@@ -20,7 +20,7 @@
 <script setup>
 import productList from "./product-list/index.vue"
 import productDescription from "./product-description/index.vue"
-import productImg from "./product-img/index.vue"
+import productsSlider from "./products-slider/index.vue"
 
 const props = defineProps({ description: Object })
 

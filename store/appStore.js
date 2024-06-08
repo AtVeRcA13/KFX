@@ -12,6 +12,9 @@ export const useAppStore = defineStore('appStore', {
         },
         toggleBurgerMenu() {
             this.burgerMenuOpened = !this.burgerMenuOpened
+        },
+        closeBurgerMenu() {
+            this.burgerMenuOpened = false
         }
     }
 })

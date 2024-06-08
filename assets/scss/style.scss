@@ -175,7 +175,7 @@ body {
 .main-slide {
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 
@@ -395,10 +395,25 @@ body {
     display: flex;
 }
 
-.pr_img {
+.products-slider-card {
     max-width: 850px;
     width: 100%;
+    padding-bottom: 20px;
+}
+
+.products-slide {
+    position: relative;
+    min-height: 400px;
+
+}
+
+.pr_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 .products--title {
@@ -465,8 +480,6 @@ body {
     background: #007D1A;
 }
 
-
-
 .products__popup {
     overflow: auto;
     width: 100%;
@@ -474,7 +487,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 2;
+    z-index: 200;
     background-color: rgb(0, 0, 0, 0.7);
 }
 

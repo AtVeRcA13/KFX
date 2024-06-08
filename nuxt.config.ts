@@ -2,7 +2,7 @@
 import { fileURLToPath } from "url"
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/scss/main.scss'],
+  css: ['~/assets/scss/main.scss',],
   imports: {
     autoImport: false
   },
@@ -25,4 +25,9 @@ export default defineNuxtConfig({
     // ...
     '@pinia/nuxt',
   ],
+  runtimeConfig: {
+    public: {
+      API_BASE_URL: process.env.STRAPI_URL || 'http://localhost:1337'
+    }
+  },
 })
