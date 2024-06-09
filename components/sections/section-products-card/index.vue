@@ -6,13 +6,14 @@
                 <h3 class="products--title">{{ props.description.title }}</h3>
             </div>
             <div class="products__inner">
-                <products-slider :img="props.description.img" />
+                <products-slider :img="props.description.product_info.images.data" />
                 <div class="products__structure">
                     <h3 class="products__structure-title">Характеристика</h3>
-                    <product-list />
+                    <product-list :info="props.description.product_info" :price="props.description.price"
+                        :name="props.description.name" :title="props.description.title" />
                 </div>
             </div>
-            <product-description :description="props.description.text" />
+            <product-description :description="props.description.product_info.description" />
         </div>
     </div>
 </template>

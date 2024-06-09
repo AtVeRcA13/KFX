@@ -6,7 +6,7 @@
     prevEl: '.slider-button-prev-product',
 }">
         <swiper-slide v-for="img in props.img" class="products-slide">
-            <img :src="img" class="pr_img">
+            <img :src="$config.public.API_BASE_URL + img.attributes.url" class="pr_img">
         </swiper-slide>
         <div class="swiper-button-next slider-button-next-product"></div>
         <div class="swiper-button-prev slider-button-prev-product"></div>

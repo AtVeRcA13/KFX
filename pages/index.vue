@@ -22,7 +22,7 @@ import { useFetch } from "#app"
 import { ref } from "vue"
 const propsdata = ref([])
 const { data, pending, error, refresh } = await useFetch('http://localhost:1337/api/produkcziyas/', {
-  query: { populate: "*" }
+  query: { "populate[product_info][populate]": "*", "populate[main_img][populate]": "*" }
 })
 console.log(data)
 propsdata.value = data.value.data

@@ -3,7 +3,13 @@ export const useAppStore = defineStore('appStore', {
     state() {
         return {
             popupOpened: false,
-            burgerMenuOpened: false
+            burgerMenuOpened: false,
+            popupData: {
+                title: "",
+                price: 0,
+                name: "",
+                sort: ""
+            }
         }
     },
     actions: {
@@ -15,6 +21,9 @@ export const useAppStore = defineStore('appStore', {
         },
         closeBurgerMenu() {
             this.burgerMenuOpened = false
+        },
+        setPopupData(data) {
+            this.popupData = data
         }
     }
 })

@@ -1,10 +1,12 @@
 <template>
     <Teleport to="body">
-        <form @submit="formSubmitHandler" v-if="store.popupOpened" class="products__popup" action="#" data-price="150">
+        <form @submit="formSubmitHandler" v-if="store.popupOpened" class="products__popup" action="#">
             <div class="popup__container">
                 <div @click="store.togglePopup" class="popup__close">&#10006;</div>
                 <div class="popup__body">
-                    <h2 class="form__title">Заявка</h2>
+                    <h2 class="form__title">Заявка {{ store.popupData.title }} {{ store.popupData.sort }}</h2>
+
+                    <p></p>
                     <div class="form-row"><input class="form-input" type="text" name="name" placeholder="Имя" required>
                     </div>
                     <div class="form-row"><input v-maska data-maska="+7 (###) ###-##-##" class="form-input" type="tel"
@@ -42,7 +44,7 @@ const formSubmitHandler = async function (e) {
     e.preventDefault();
     const form = e.currentTarget
     const formData = new FormData(form);
-
+    formData.append("product-name", store.popupData.name);
     formData.append("summ", summ.value);
     const response = await fetch("http://localhost/mail.php", {
         method: "POST",
@@ -56,7 +58,7 @@ const formSubmitHandler = async function (e) {
 const count = ref(1)
 const price = ref(150)
 const summ = computed(() => {
-    return Number(count.value) * price.value
+    return Number(count.value) * store.popupData.price
 })
 function inputHandler() {
     if (Number(count.value) <= 0) {

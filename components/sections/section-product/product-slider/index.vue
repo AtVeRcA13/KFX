@@ -30,12 +30,15 @@
             <swiper-slide class="products__plants" v-for="item in slideList">
                 <img :src="$config.public.API_BASE_URL + item.attributes.main_img.data.attributes.url" alt=""
                     class="products__img">
-                <p class="products__name">{{ item.name }}</p>
-                <p class="products__price">{{ item.price }}</p>
-                <button @click="store.togglePopup" class="pr-button products__button" data-type="Пшеница сорт: Амелия"
-                    data-price="150">Купить</button>
-                <NuxtLink :to="`/products/${item.product}`" class="pr-button products__link"
-                    data-type="Пшеница сорт: Амелия" data-price="150">Подробнее</NuxtLink>
+                <p class="products__name">{{ item.attributes.title }}</p>
+                <p class="products__price">Цена: {{ item.attributes.price }}</p>
+                <button @click="clickHandler({
+                    name: item.attributes.name,
+                    title: item.attributes.title,
+                    price: item.attributes.price,
+                    sort: item.attributes.product_info.sort.data.attributes.sort
+                })" class="pr-button products__button">Купить</button>
+                <NuxtLink :to="`/products/${item.attributes.name}`" class="pr-button products__link">Подробнее</NuxtLink>
 
             </swiper-slide>
 
@@ -49,16 +52,9 @@
 <script setup>
 import { ref } from 'vue'
 import { Pagination, Navigation } from 'swiper/modules'
-import img1 from "images/wheat.png"
-import img2 from "images/Corn.png"
-import img3 from "images/barley.png"
-import img4 from "images/Buckwheat.png"
-import img5 from "images/oats.png"
-import img6 from "images/peas.png"
-import img7 from "images/switchgrass.png"
-import img8 from "images/Rye.png"
 import { useAppStore } from 'store/appStore'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
 
 const props = defineProps({
     slideList: {
@@ -66,6 +62,10 @@ const props = defineProps({
         default: () => []
     }
 })
+const clickHandler = (data) => {
+    store.setPopupData(data)
+    store.togglePopup()
+}
 
 const modules = [Pagination, Navigation]
 /* const slideList = ref([

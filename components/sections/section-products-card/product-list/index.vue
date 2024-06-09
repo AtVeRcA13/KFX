@@ -1,41 +1,57 @@
 <template>
     <ul class="products__list">
-        <li v-for="item in productsList" class="products__list-item">
+        <li class="products__list-item">
             <p class="products__list-item_text">
-                {{ item.name }}
+                Сорт: {{ props.info.sort.data.attributes.sort }}
             </p>
         </li>
+        <li class="products__list-item">
+            <p class="products__list-item_text">
+                Цена: {{ props.price }}
+            </p>
+        </li>
+        <li class="products__list-item">
+            <p class="products__list-item_text">
+                Упаковка: {{ props.info.packing.data.attributes.packing }}
+            </p>
+        </li>
+        <li class="products__list-item">
+            <p class="products__list-item_text">
+                Вес: {{ props.info.weight }}
+            </p>
+        </li>
+        <li class="products__list-item">
+            <p class="products__list-item_text">
+                В нвличие: {{ props.info.availability ? "да" : "нет" }}
+            </p>
+        </li>
+
     </ul>
-    <button @click="store.togglePopup" class="pr-button products__button" data-type="Пшеница сорт: Амелия"
-        data-price="150">Купить</button>
+    <button @click="clickHandler({
+        name: props.name,
+        title: props.title,
+        price: props.price,
+        sort: props.info.sort.data.attributes.sort
+    })" class="pr-button products__button">Купить</button>
 </template>
 
 <script setup>
-import { ref } from "vue"
 import { useAppStore } from 'store/appStore'
-const productsList = ref([
+const props = defineProps(
     {
-        name: "сорт: Амелия"
-    },
-    {
-        name: "Вид: зерновой"
-    },
-    {
-        name: "Упаковка: мешки"
-    },
-    {
-        name: "Вес: кг"
-    },
-    {
-        name: "Цена: 150р"
-    },
-    {
-        name: "В наличие: да"
+        info: Object,
+        price: Number,
+        name: String,
+        title: String
     }
-])
-
-
+)
+console.log(props.info)
 const store = useAppStore()
+
+const clickHandler = (data) => {
+    store.setPopupData(data)
+    store.togglePopup()
+}
 </script>
 
 <style lang="scss" scoped></style>
