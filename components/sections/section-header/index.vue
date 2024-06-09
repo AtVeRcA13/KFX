@@ -16,42 +16,6 @@ import logo from "common/logo/index.vue"
 let header = ref();
 onMounted(() => {
 
-    /*  window.addEventListener('resize', calcMainPadding);
-     //calcMainPadding();
-     function calcMainPadding() {
-         let headerHeight = header.value.offsetHeight;
-         document.querySelector('.main').style.paddingTop = headerHeight + "px";
-     }
-     let lastScroll = 0;
-     const defaultOffset = 600;
- 
-     const scrollPosition = () => {
-         return window.pageYOffset || document.documentElement.scrollTop;
-     }
-     const containHide = () => {
-         return header.value.classList.contains('header-hide');
-     }
- 
-     window.addEventListener('scroll', () => {
-         if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
-             const headerHeight = window.getComputedStyle(header.value).height
-             header.value.classList.add('header-hide');
- 
-         }
-         else if (scrollPosition() < lastScroll && containHide()) {
-             header.value.classList.remove('header-hide');
- 
-         }
-         if (scrollPosition() > defaultOffset) {
-             header.value.style.position = "fixed";
-             calcMainPadding();
-         }
-         else {
-             document.querySelector('.main').style.paddingTop = "0px";
-         }
- 
-         lastScroll = scrollPosition();
-     }) */
 
     if (!header.value) return
     calcMainPadding();

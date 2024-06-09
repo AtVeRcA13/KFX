@@ -22,7 +22,7 @@
         </li>
         <li class="products__list-item">
             <p class="products__list-item_text">
-                В нвличие: {{ props.info.availability ? "да" : "нет" }}
+                В нaличие: {{ props.info.availability ? "да" : "нет" }}
             </p>
         </li>
 
