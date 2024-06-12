@@ -14,9 +14,11 @@ import img3 from "images/img3.jpg"
 import popupProduct from "popups/popup-product/index.vue"
 import productCardSection from "sections/section-products-card/index.vue"
 import { useFetch } from '#app';
+import { useRuntimeConfig } from '#app';
+const config = useRuntimeConfig()
 const propsdata = ref(null)
 const route = useRoute()
-const { data, pending, error, refresh } = await useFetch(`http://localhost:1337/api/produkcziyas`, {
+const { data, pending, error, refresh } = await useFetch(config.public.API_BASE_URL + "/api/produkcziyas/", {
     query: { "filters[name][$eq]": route.params.name, "populate[product_info][populate]": "*", "populate[class][populate]": "*" }
 
 })

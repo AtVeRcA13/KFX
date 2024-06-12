@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      API_BASE_URL: process.env.STRAPI_URL || 'http://localhost:1337'
+      API_BASE_URL: process.env.STRAPI_URL || 'https://api.iskandarovv.ru'
     }
   },
 })

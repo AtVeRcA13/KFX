@@ -20,13 +20,15 @@ import directionSection from "sections/section-direction/index.vue"
 import contsctsSection from "sections/section-contacts/index.vue"
 import { useFetch } from "#app"
 import { ref } from "vue"
+import { useRuntimeConfig } from "#app"
+const config = useRuntimeConfig()
 const propsdata = ref([])
 const propsfilter = ref([])
 const [data1, data2] = await Promise.all([
-  useFetch('http://localhost:1337/api/produkcziyas/', {
+  useFetch(config.public.API_BASE_URL + "/api/produkcziyas/", {
     query: { "populate[product_info][populate]": "*", "populate[main_img][populate]": "*", "populate[class][populate]": "*", }
   }),
-  useFetch('http://localhost:1337/api/classes')
+  useFetch(config.public.API_BASE_URL + '/api/classes')
 ])
 propsdata.value = data1.data.value.data
 propsfilter.value = data2.data.value.data
