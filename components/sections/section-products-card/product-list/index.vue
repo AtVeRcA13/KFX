@@ -1,9 +1,14 @@
 <template>
     <ul class="products__list">
         <li class="products__list-item">
+        <li class="products__list-item">
             <p class="products__list-item_text">
-                Сорт: {{ props.info.sort.data.attributes.sort }}
+                Категория: {{ props.info.class.data.attributes.class }}
             </p>
+        </li>
+        <p class="products__list-item_text">
+            Сорт: {{ props.info.sort.data.attributes.sort }}
+        </p>
         </li>
         <li class="products__list-item">
             <p class="products__list-item_text">

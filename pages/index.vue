@@ -3,7 +3,7 @@
   <about-section />
   <company-section />
   <advantages-section />
-  <product-section :slide-list="propsdata" />
+  <product-section :slide-list="propsdata" :filterList="propsfilter" />
   <direction-section />
   <contsctsSection />
   <popup-product />
@@ -21,11 +21,22 @@ import contsctsSection from "sections/section-contacts/index.vue"
 import { useFetch } from "#app"
 import { ref } from "vue"
 const propsdata = ref([])
-const { data, pending, error, refresh } = await useFetch('http://localhost:1337/api/produkcziyas/', {
-  query: { "populate[product_info][populate]": "*", "populate[main_img][populate]": "*" }
-})
-console.log(data)
-propsdata.value = data.value.data
+const propsfilter = ref([])
+const [data1, data2] = await Promise.all([
+  useFetch('http://localhost:1337/api/produkcziyas/', {
+    query: { "populate[product_info][populate]": "*", "populate[main_img][populate]": "*", "populate[class][populate]": "*", }
+  }),
+  useFetch('http://localhost:1337/api/classes')
+])
+propsdata.value = data1.data.value.data
+propsfilter.value = data2.data.value.data
+console.log(data1)
+console.log(data2)
+/* const { data, pending, error, refresh } = await useFetch('http://localhost:1337/api/produkcziyas/', {
+  query: { "populate[product_info][populate]": "*", "populate[main_img][populate]": "*", "populate[class][populate]": "*", "classes" }
+}) */
+/* console.log(data)
+propsdata.value = data.value.data */
 
 </script>
 

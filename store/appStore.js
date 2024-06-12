@@ -4,6 +4,7 @@ export const useAppStore = defineStore('appStore', {
         return {
             popupOpened: false,
             burgerMenuOpened: false,
+            FilterOpened: false,
             popupData: {
                 title: "",
                 price: 0,
@@ -24,6 +25,10 @@ export const useAppStore = defineStore('appStore', {
         },
         setPopupData(data) {
             this.popupData = data
-        }
+        },
+        toggleFilter() {
+            this.FilterOpened = !this.FilterOpened;
+        },
+
     }
 })

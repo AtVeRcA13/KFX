@@ -1,0 +1,15 @@
+<template>
+    <svg width="11.312988" height="6.363281" viewBox="0 0 11.313 6.36328" fill="none" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs></defs>
+        <path id="Union"
+            d="M11.313 0.707031L10.606 0L5.65674 4.94922L0.707031 0L0 0.707031L5.65723 6.36328L11.313 0.707031Z"
+            clip-rule="evenodd" fill-rule="evenodd" fill="#404040"></path>
+    </svg>
+</template>
+
+<script setup>
+
+</script>
+
+<style lang="scss" scoped></style>

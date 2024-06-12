@@ -68,57 +68,6 @@ const clickHandler = (data) => {
 }
 
 const modules = [Pagination, Navigation]
-/* const slideList = ref([
-    {
-        img: data.main_img,
-        name: data.name,
-        price: data.price,
-        product: data.sort
-    },
-    {
-        img: img2,
-        name: "Кукуруза cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img3,
-        name: "Ячмень cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img4,
-        name: "Гречиха cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img5,
-        name: "Овес cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img6,
-        name: "Горох cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img7,
-        name: "Просо cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-    {
-        img: img8,
-        name: "Рожь cорт:",
-        price: "Цена: 150 р",
-        product: "amelia"
-    },
-
-]) */
 
 const store = useAppStore()
 </script>

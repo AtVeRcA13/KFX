@@ -16,7 +16,8 @@ import productCardSection from "sections/section-products-card/index.vue"
 import { useFetch } from '#app';
 const propsdata = ref(null)
 const route = useRoute()
-const { data, pending, error, refresh } = await useFetch(`http://localhost:1337/api/produkcziyas?filters[name][$eq]=${route.params.name}&populate[product_info][populate]=*`, {
+const { data, pending, error, refresh } = await useFetch(`http://localhost:1337/api/produkcziyas`, {
+    query: { "filters[name][$eq]": route.params.name, "populate[product_info][populate]": "*", "populate[class][populate]": "*" }
 
 })
 console.log(data)
