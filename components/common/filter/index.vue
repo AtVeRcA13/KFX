@@ -43,6 +43,7 @@ const opened = ref(false)
     width: -moz-fit-content;
     width: fit-content;
     z-index: 100;
+    margin-left: 50px;
 
 }
 
