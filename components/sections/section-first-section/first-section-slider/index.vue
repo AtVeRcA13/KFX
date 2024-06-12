@@ -4,13 +4,13 @@
         disableOnInteraction: false,
     }">
         <swiper-slide class="main-slide">
-            <img src="images/wheat_field.png" alt="" class="main__slide-img">
+            <img src="@/assets/images/wheat_field.jpg" alt="" class="main__slide-img">
         </swiper-slide>
         <swiper-slide class="main-slide">
-            <img src="images/wheat_field2.png" alt="" class="main__slide-img">
+            <img src="@/assets/images/wheat_field2.jpg" alt="" class="main__slide-img">
         </swiper-slide>
         <swiper-slide class="main-slide">
-            <img src="images/wheat_field3.png" alt="" class="main__slide-img">
+            <img src="@/assets/images/wheat_field3.jpg" alt="" class="main__slide-img">
         </swiper-slide>
 
     </swiper>

@@ -27,7 +27,7 @@ const formSubmitHandler = async function (e) {
     e.preventDefault();
     const form = e.currentTarget
     const formData = new FormData(form);
-    const response = await fetch("http://localhost/mail.php", {
+    const response = await fetch("https://iskandarovv.ru/mail.php", {
         method: "POST",
         body: formData,
     });

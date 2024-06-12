@@ -46,7 +46,7 @@ const formSubmitHandler = async function (e) {
     const formData = new FormData(form);
     formData.append("product-name", store.popupData.name);
     formData.append("summ", summ.value);
-    const response = await fetch("http://localhost/mail.php", {
+    const response = await fetch("https://iskandarovv.ru/mail.php", {
         method: "POST",
         body: formData,
     });
