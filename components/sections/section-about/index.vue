@@ -3,9 +3,11 @@
         <div class="container about__container">
             <h2 class="section--title">Глава КФХ</h2>
             <div class="about__video_wrapper">
-                <iframe class="about__video" src="https://vk.com/video_ext.php?oid=-172756992&id=456239107&hd=4"
-                    width="100%" height="100%" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
-                    frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4BL-zbWVj5w?si=u7PrZflVKQp7lUqb"
+                    title="YouTube video player" frameborder="0" controls="0" modestbranding="1"
+                    allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
             </div>
         </div>
     </div>
