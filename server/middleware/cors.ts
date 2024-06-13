@@ -2,12 +2,10 @@ import { defineEventHandler, setHeaders } from "#imports"
 
 export default defineEventHandler((event) => {
     const headers = {
-        'Access-Control-Allow-Origin': 'Same-Origin',
-        'crossOriginResourcePolicy': 'same-origin',
-        'crossOriginOpenerPolicy': 'same-origin',
-        'crossOriginEmbedderPolicy': 'require-corp',
-        'contentSecurityPolicy': "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        'X-XSS-Protection': 1
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+        'Access-Control-Allow-Methods': "GET,DELETE,PATCH,POST,PUT",
     }
     setHeaders(event, headers)
 
