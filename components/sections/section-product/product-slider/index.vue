@@ -27,7 +27,7 @@
     }
         " class="products-slider">
 
-            <swiper-slide class="products__plants" v-for="item in slideList">
+            <swiper-slide class="products__plants" v-for="item in slideList" :key="item.id">
                 <img :src="$config.public.API_BASE_URL + item.attributes.main_img.data.attributes.url" alt=""
                     class="products__img">
                 <p class="products__name">{{ item.attributes.title }}</p>

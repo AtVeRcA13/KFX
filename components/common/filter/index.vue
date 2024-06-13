@@ -42,7 +42,7 @@ const opened = ref(false)
     transition: height .3s ease;
     width: -moz-fit-content;
     width: fit-content;
-    z-index: 100;
+    z-index: 50;
     margin-left: 50px;
 
 }
