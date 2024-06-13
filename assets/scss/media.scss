@@ -31,7 +31,7 @@
     }
 
     .products__img {
-        min-height: 360px;
+        aspect-ratio: 77 / 65;
     }
 
     .swiper-wrapper .swiper-slide {
@@ -409,10 +409,6 @@
 
     .company__text {
         font-size: 12px;
-    }
-
-    .products__img {
-        min-height: 300px;
     }
 
     .products__plants {
